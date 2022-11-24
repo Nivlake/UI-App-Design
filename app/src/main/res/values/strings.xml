@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">UI App Design</string>
+    <string name="Genre">ANIME\nACTION SERIES</string>
+    <string name="Film_Name">Vivy Fluorite Eye\'s Song</string>
+    <string name="e1_desc">S1 - 1 My Code: To Make Everyone Happy with My Singing</string>
+    <string name="e2_desc">S1 - 2 Quarter Note The Beginning of the One Hundred Year Journey</string>
+    <string name="e3_desc">S1 - 3 A Tender Moon Tempo - A Pleasant Chat with the Stars</string>
+    <string name="more_button"><![CDATA[More>>]]></string>
+    <string name="button1">START WATCHING S1 E1</string>
+    <string name="button2">Download</string>
 </resources>

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -35,7 +37,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.182" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imageButton"
             android:layout_width="24dp"
             android:layout_height="24dp"
@@ -45,14 +47,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/ic_baseline_shopping_cart_24"
+            android:src="@drawable/jokowi"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/textView2"
@@ -61,8 +64,8 @@
             android:layout_marginTop="50dp"
             android:fontFamily="@font/poppins_basic"
             android:paddingHorizontal="24dp"
-            android:text="ANIME\nACTION SERIES"
-            android:textSize="50dp"
+            android:text="@string/Genre"
+            android:textSize="50sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,9 +86,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semi_bold"
             android:paddingHorizontal="24dp"
-            android:text="Vivy Fluorite Eye's Song"
-            android:textColor="@color/black"
-            android:textSize="20dp"
+            android:text="@string/Film_Name"
+            style="@style/Text.Title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -242,8 +244,7 @@
             android:paddingHorizontal="24dp"
             android:layout_marginTop="20dp"
             android:text="Episode"
-            android:textColor="@color/black"
-            android:textSize="20dp"
+            style="@style/Text.Title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -251,7 +252,6 @@
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:orientation="vertical"
             android:weightSum="4"
             app:layout_constraintEnd_toEndOf="parent"
@@ -273,10 +273,10 @@
 
                 <TextView
                     style="@style/Text.ExtraSmall"
-                    android:layout_width="189dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_margin="10dp"
-                    android:text="S1 - 1 My Code: To Make Everyone Happy with My Singing" />
+                    android:text="@string/e1_desc" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -293,10 +293,10 @@
 
                 <TextView
                     style="@style/Text.ExtraSmall"
-                    android:layout_width="189dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_margin="10dp"
-                    android:text="S1 - 2 Quarter Note – The Beginning of the One Hundred-Year Journey" />
+                    android:text="@string/e2_desc" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -313,11 +313,56 @@
 
                 <TextView
                     style="@style/Text.ExtraSmall"
-                    android:layout_width="189dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_margin="10dp"
-                    android:text="S1 - 3 A Tender Moon Tempo - A Pleasant Chat with the Stars" />
+                    android:text="@string/e3_desc" />
             </LinearLayout>
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/Text.Body.SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:text="@string/more_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#171717"
+            android:foregroundGravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <Button
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.9"
+                    android:text="@string/button1"
+                    android:background="@drawable/custom_button"/>
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:text="@string/button2"
+                    android:background="@drawable/custom_button"/>
+            </LinearLayout>
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+</RelativeLayout>
